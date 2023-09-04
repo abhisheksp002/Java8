@@ -5,13 +5,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Group list of employee by age.
+ * @author abhishek.kumar2
+ *
+ */
 public class GroupByDemo {
 
 	public static void main(String[] args) {
 
 		List<Employee> empList = getEmpList();
 
-		Map<Integer, List<Employee>> empMap = empList.stream().collect(Collectors.groupingBy(Employee::getAge));
+		Map<Integer,List<Employee>> empMap = 
+				empList.stream().collect(Collectors.groupingBy(Employee::getAge));
 		System.out.println("Employees grouped by age in Java 8: " + empMap);
 
 	}
